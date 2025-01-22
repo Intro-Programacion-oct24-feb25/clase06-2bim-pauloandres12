@@ -16,6 +16,7 @@ public class Ejemplo092 {
 
     public static void main(String[] args) {
         boolean bandera = true;
+        String cadena = "";
         Scanner entrada = new Scanner(System.in);
 
         while (bandera) {
@@ -24,7 +25,7 @@ public class Ejemplo092 {
                 String salida;
                 char letra;
 
-                System.out.println("Ingrese un pais que inicie con vocal");
+                System.out.println("Ingrese un pais que inicie con consonante");
                 salida = entrada.nextLine();
                 salida.toLowerCase();
 
@@ -32,15 +33,15 @@ public class Ejemplo092 {
 
                 if ((letra == 'a') || (letra == 'e') || (letra == 'i')
                         || (letra == 'o') || (letra == 'u')) {
-                    bandera = true;
-                } else {
                     throw new Exception(salida);
                 }
+                bandera = false;
 
             } catch (Exception e) {
                 System.out.printf("Ocurrio una excepcion %s\n", e);
                 bandera = false;
             }
+            System.out.printf("%s\n", cadena);
         }
     }
 }
