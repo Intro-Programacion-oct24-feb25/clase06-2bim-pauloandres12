@@ -34,7 +34,7 @@ public class Ejemplo092 {
                         || (letra == 'o') || (letra == 'u')) {
                     bandera = true;
                 } else {
-                    throw new Exception("El pais inicia con consonante");
+                    throw new Exception(salida);
                 }
 
             } catch (Exception e) {
