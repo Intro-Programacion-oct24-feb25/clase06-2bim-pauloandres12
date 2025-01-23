@@ -27,7 +27,10 @@ public class Ejemplo051 {
                 int resultado = valor1 / valor2;
 
                 System.out.printf("Resultado %d\n", resultado);
-                bandera = false;
+                bandera = false;  // bandera es falso porque en el momento en el
+                // que el ciclo llegue a bandera, se supone que no existe un 
+                // error, por lo que el ciclo estaria completo. 
+                
             } catch (InputMismatchException inputMismatchException) {
 
                 System.out.printf("Existe un error de tipo %s\n",

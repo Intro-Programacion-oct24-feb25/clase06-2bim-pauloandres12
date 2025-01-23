@@ -20,8 +20,11 @@ public class Ejemplo12 {
         int valor = entrada.nextInt();
         int[] resultados = new int[valor];
 
-        try {
-            for (int i = 0; i < valor; i++) {
+        int a = 0;
+        int b = resultados.length;
+
+        while (a < b) {
+            try {
                 System.out.println("Ingrese el primer valor");
                 int valor1 = entrada.nextInt();
                 System.out.println("Ingrese el segundo valor");
@@ -29,24 +32,30 @@ public class Ejemplo12 {
 
                 int resultado = valor1 / valor2;
 
-                resultados[i] = resultado;
-                
-                System.out.printf("%d\n", resultados[i]);
-            }
-            
-        } catch (ArithmeticException e) {
-            System.out.printf("(ArithmeticException) Ocurrió una "
-                    + "excepción %s\n", e);
-        } catch (InputMismatchException e) {
-            System.out.printf("(InputMismatchException) Ocurrió una "
-                    + "excepción %s\n", e);
-        } catch (Exception e) {
-            System.out.printf("Ocurrió una excepción %s\n", e);
-        }
+                resultados[a] = resultado;
 
-        /*Realizar un proceso repetitivo que permita realizar la división de 
+                a = a + 1;
+
+            } catch (ArithmeticException e) {
+                System.out.printf("(ArithmeticException) Ocurrió una "
+                        + "excepción %s\n", e);
+            } catch (InputMismatchException e) {
+                System.out.printf("(InputMismatchException) Ocurrió una "
+                        + "excepción %s\n", e);
+                entrada.nextLine();
+            } catch (Exception e) {
+                System.out.printf("Ocurrió una excepción %s\n", e);
+            }
+        }
+        for (int i = 0; i < resultados.length; i++) {
+            System.out.printf("El resultado de la division %d es: %d\n",
+                    i + 1,
+                    resultados[i]);
+        }
+    }
+}
+
+/*Realizar un proceso repetitivo que permita realizar la división de 
         números ingresados por teclado; el resultado de cada división debe ir 
         almacenandose en cada posición del arreglo. Considerar las excepciones
         posibles*/
-    }
-}

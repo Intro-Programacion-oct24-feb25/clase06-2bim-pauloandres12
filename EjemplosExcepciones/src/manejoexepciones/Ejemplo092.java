@@ -22,24 +22,27 @@ public class Ejemplo092 {
         while (bandera) {
 
             try {
-                String salida;
-                char letra;
 
-                System.out.println("Ingrese un pais que inicie con consonante");
-                salida = entrada.nextLine();
+                System.out.println("Ingrese un pais");
+                String salida = entrada.nextLine();
+                
                 salida.toLowerCase();
-
-                letra = salida.charAt(0);
+                char letra = salida.charAt(0);
 
                 if ((letra == 'a') || (letra == 'e') || (letra == 'i')
                         || (letra == 'o') || (letra == 'u')) {
-                    throw new Exception(salida);
+                    bandera = true;
+                    throw new Exception("Ingrese un pais que inicie con "
+                            + "consonante");
+                    
+                } else {
+                    cadena = salida;
+                    bandera = false;
                 }
-                bandera = false;
 
             } catch (Exception e) {
                 System.out.printf("Ocurrio una excepcion %s\n", e);
-                bandera = false;
+            
             }
             System.out.printf("%s\n", cadena);
         }
